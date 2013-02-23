@@ -22,17 +22,27 @@ def puts(clr):
 
 def main(args):
 
-    #req = requests.get(args.imfile)
-    #im = Image.open(StringIO(req.content))
-    im = Image.open(args.imfile)
-    maxw = 80
-    im.thumbnail((40, 40), Image.ANTIALIAS)
+    if args.imfile.startswith('http'):
+        req = requests.get(args.imfile)
+        im = Image.open(StringIO(req.content))
+    else:
+        im = Image.open(args.imfile)
+
+    maxw = int(args.columns / 2)
+    maxh = int(maxw * (float(im.size[1])/im.size[0]))
+    maxsize = maxw if maxw > maxh else maxh
+    im.thumbnail((maxsize, maxsize), Image.ANTIALIAS)
+
     w, h = im.size
     pxs = im.load()
+    alpha = len(pxs[0, 0]) == 4
     for y in range(h):
         for x in range(w):
             px = pxs[x, y]
-            sys.stdout.write(puts(px))
+            if alpha and px[3] < 128:
+                sys.stdout.write('  ')
+            else:
+                sys.stdout.write(puts(px[:3]))
         sys.stdout.write('\n')
 
 def cli():
@@ -44,6 +54,8 @@ def cli():
     parser = argparse.ArgumentParser(description=desc)
     parser.add_argument('imfile',
             help='image file to render')
+    parser.add_argument('-c', '--columns', dest='columns', type=int,
+            default=80, help='width of img in terminal columns')
     args = parser.parse_args()
 
     main(args)
