@@ -13,9 +13,16 @@ TODO list requirements.
 use
 ---
 
-TODO
+Render an image in your terminal:
 
-As always, `-h` is your friend:
+    lores fixtures/sample.png
+
+![example/example.png](./example/example.png)
+
+help
+----
+
+As expected, via `-h` or `--help`:
 
     usage: lores [-h] imfile
 
@@ -26,3 +33,9 @@ As always, `-h` is your friend:
 
     optional arguments:
       -h, --help  show this help message and exit
+
+future
+------
+
+- smarter image resizing
+- intelligently handle remote requests or local files
