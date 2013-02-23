@@ -8,7 +8,12 @@ install
 
 `pip install lores`. Done.
 
-TODO list requirements.
+lores depends on [pillow][] and [requests][], and [vari][]; the above
+command installs dependencies as needed.
+
+[pillow]: https://github.com/python-imaging/Pillow
+[requests]: https://github.com/kennethreitz/requests
+[vari]: https://github.com/philadams/vari
 
 use
 ---

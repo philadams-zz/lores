@@ -1,2 +1,4 @@
 v0.0.1, 2013-02-21 -- Initial release.
 v0.0.2, 2013-02-23 -- Remote images; set image width with --columns.
+v0.0.3, 2013-02-23 -- Describe dependences in setup.py.
+v0.0.4, 2013-02-23 -- Add requests to dependencies list.
