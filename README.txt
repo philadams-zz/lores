@@ -8,7 +8,7 @@ install
 
 `pip install lores`. Done.
 
-lores depends on [pillow][] and [requests][], and [vari][]; the above
+lores depends on [pillow][], [requests][], and [vari][]; the above
 command installs dependencies as needed.
 
 [pillow]: https://github.com/python-imaging/Pillow
@@ -21,7 +21,7 @@ use
 Render a local or remote image in your terminal:
 
     lores fixtures/parrot.png
-    lores http://octodex.github.com/images/original.jpg
+    lores --columns=40 http://octodex.github.com/images/original.jpg
 
 ![example/example.png](./example/example.png)
 
