@@ -30,7 +30,7 @@ help
 
 As expected, via `-h` or `--help`:
 
-    usage: lores [-h] [-w COLUMNS] imfile
+    usage: lores [-h] [-c COLUMNS] imfile
 
     Render images on the terminal. http://github.com/philadams/lores
 
