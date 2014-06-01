@@ -1,1 +1,1 @@
-from .core import cli
+from .core import cli, flush
