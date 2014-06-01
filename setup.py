@@ -8,7 +8,7 @@ with open('README.txt') as f:
 
 setup(
     name='lores',
-    version='0.0.4',
+    version='0.0.5',
     author='Phil Adams',
     author_email='phil@philadams.net',
     url='https://github.com/philadams/lores',
@@ -19,4 +19,3 @@ setup(
     packages=['lores'],
     scripts=['bin/lores'],
 )
-
